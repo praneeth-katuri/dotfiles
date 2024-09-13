@@ -1,0 +1,30 @@
+#!/bin/dash
+
+#systemctl --user import-environment PATH XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR XDG_SESSION_DESKTOP XDG_CURRENT_DESKTOP DESKTOP_SESSION GTK_MODULES MOTD_SHOWN XAUTHORITY SSH_AUTH_SOCK SHLVL GTK3_MODULES
+
+xrandr --output DP-1 --primary --mode 1920x1080 --rate 144 --right-of HDMI-1 --output HDMI-1 --mode 1920x1080 --rate 144
+
+# 'picom' - compositor for special blur effects
+DISPLAY=":0" picom &
+
+# dwm-bar script( got from chadwm-siduck76 )
+$HOME/.config/dwmbar/bar.sh &
+
+# 'polkit-gnome' for sudo authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# dunst notfication server
+dunst &
+
+# 'feh' for setting background wallpaper
+feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
+
+# screen locking setup
+$HOME/.scripts/lock_and_power/lock.sh &
+
+exec /usr/lib/pam_kwallet_init &
+
+nm-applet &
+
+## 'rofi-greenclip'
+greenclip daemon &
