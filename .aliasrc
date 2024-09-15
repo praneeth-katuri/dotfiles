@@ -1,0 +1,42 @@
+# install 'exa' to use below aliases
+alias ls='exa -al --color=always --group-directories-first'
+alias la='exa -a --color=always --group-directories-first'
+alias ll='exa -l --color=always --group-directories-first'
+alias lt='exa -aT --color=always --group-directories-first'
+alias l.='exa -a | egrep "^\."'
+
+# alias to view journal
+alias jctl="journalctl -p 3 -xb"
+
+# install 'bat' to use the below alias
+alias cat='bat'
+
+# Bare-Git-Repo alias
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias cp='cp -iv'
+alias fslabel='lsblk -dno LABEL'
+alias fsuuid='lsblk -dno UUID'
+alias mv='mv -iv'
+alias partlabel='lsblk -dno PARTLABEL'
+alias partuuid='lsblk -dno PARTUUID'
+alias rbjctl='journalctl --boot=-1 --reverse'
+alias rm='rm -Iv'
+alias sc-disable='sudo systemctl disable'
+alias sc-disable-now='sudo systemctl disable --now'
+alias sc-edit='sudo systemctl edit'
+alias sc-enable='sudo systemctl enable'
+alias sc-enable-now='sudo systemctl enable --now'
+alias sc-is-enabled='systemctl is-enabled'
+alias sc-list-jobs='systemctl list-jobs'
+alias sc-list-timers='systemctl list-timers'
+alias sc-mask='sudo systemctl mask'
+alias sc-mask-now='sudo systemctl mask --now'
+alias sc-restart='sudo systemctl restart'
+alias sc-show='systemctl show'
+alias sc-show-environment='systemctl show-environment'
+alias sc-start='sudo systemctl start'
+alias sc-status='systemctl status'
+alias sc-stop='sudo systemctl stop'
+alias sc-unmask='sudo systemctl unmask'
+alias uptime='/home/ali3nx/.scripts/handyscripts_for_bar/uptime.sh'
