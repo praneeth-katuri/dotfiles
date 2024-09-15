@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Pause MPD
+mpc pause
+
+# Pause mpv or other MPRIS-compatible media players (including web browsers like Firefox or Chromium)
+playerctl --all-players pause
+
+# Clear clipboard (Wayland clipboard)
+wl-copy --clear
+
+# Mute system volume using pulsemixer
+pulsemixer --mute
+
+# Lock the screen with swaylock
+swaylock -f

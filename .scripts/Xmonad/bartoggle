@@ -1,0 +1,13 @@
+#!/usr/bin/env dash
+
+if pgrep tint2; then
+	pkill tint2
+	exit 1
+else
+	exec ~/.local/bin/tint2 -c ~/.config/tint2/panellauncher.tint2rc &
+	exec ~/.local/bin/tint2 -c ~/.config/tint2/clock.tint2rc &
+	exec ~/.local/bin/tint2 -c ~/.config/tint2/customscripts.tint2rc &
+	exec ~/.local/bin/tint2 -c ~/.config/tint2/icons.tint2rc &
+	exec ~/.local/bin/tint2 -c ~/.config/tint2/workspaces.tint2rc &
+fi
+exit

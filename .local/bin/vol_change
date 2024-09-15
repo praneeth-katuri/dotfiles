@@ -1,0 +1,7 @@
+#!/usr/bin/env dash
+
+output="$1"
+usep=`echo $output | sed 's/%//g'`
+vol=$(printf %.0f "$usep")
+
+pulsemixer --set-volume "$vol"
