@@ -1,8 +1,11 @@
 #!/bin/dash
 
-#systemctl --user import-environment PATH XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR XDG_SESSION_DESKTOP XDG_CURRENT_DESKTOP DESKTOP_SESSION GTK_MODULES MOTD_SHOWN XAUTHORITY SSH_AUTH_SOCK SHLVL GTK3_MODULES
+systemctl --user import-environment ANDROID_HOME PATH XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR XDG_SESSION_DESKTOP XDG_CURRENT_DESKTOP DESKTOP_SESSION GTK_MODULES MOTD_SHOWN XAUTHORITY SHLVL GTK3_MODULES QT_QPA_PLATFORMTHEME HG DEBUGINFOD_URLS _JAVA_AWT_WM_NONREPARENTING SSH_ASKPASS SSH_ASKPASS_REQUIRE NVM_BIN NVM_DIR NVM_CD NVM_INC PAM_KWALLET5_LOGIN
 
-xrandr --output DP-1 --primary --mode 1920x1080 --rate 144 --right-of HDMI-1 --output HDMI-1 --mode 1920x1080 --rate 144
+xrandr --output DP-1 --primary --mode 1920x1080 --rate 144 --right-of HDMI-1 --output HDMI-1 --mode 1920x1080 --rate 144 --rotate left
+
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+
 
 # 'picom' - compositor for special blur effects
 DISPLAY=":0" picom &
@@ -17,7 +20,8 @@ $HOME/.config/dwmbar/bar.sh &
 dunst &
 
 # 'feh' for setting background wallpaper
-feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
+#feh --bg-scale --randomize ~/Pictures/Wallpapers/* &
+~/.fehbg &
 
 # screen locking setup
 $HOME/.scripts/lock_and_power/lock.sh &
