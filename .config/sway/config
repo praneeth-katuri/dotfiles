@@ -1,4 +1,4 @@
-exec "systemctl --user import-environment ANDROID_HOME PATH SHLVL SSH_AUTH_SOCK I3SOCK SWAYSOCK DESKTOP_SESSION DISPLAY MOTD_SHOWN WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_DESKTOP XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR QT_QPA_PLATFORM QT_QPA_PLATFORMTHEME MOZ_ENABLE_WAYLAND DEBUGINFOD_URLS HADOOP_COMMON_LIB_NATIVE_DIR HADOOP_CONF_DIR HADOOP_LOG_DIR HADOOP_USERNAME HG npm_config_prefix _JAVA_AWT_WM_NONREPARENTING SSH_ASKPASS"
+exec "systemctl --user import-environment ANDROID_HOME PATH SHLVL I3SOCK SWAYSOCK DESKTOP_SESSION DISPLAY MOTD_SHOWN WAYLAND_DISPLAY XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_DESKTOP XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR QT_QPA_PLATFORM QT_QPA_PLATFORMTHEME MOZ_ENABLE_WAYLAND DEBUGINFOD_URLS HG _JAVA_AWT_WM_NONREPARENTING SSH_ASKPASS SSH_ASKPASS_REQUIRE PAM_KWALLET5_LOGIN NVM_BIN NVM_DIR NVM_INC NVM_CD"
 
 exec /usr/lib/pam_kwallet_init
 #
@@ -14,21 +14,27 @@ set $term kitty
 set $menu sirula | xargs swaymsg exec --
 
 output 'GIGA-BYTE TECHNOLOGY CO., LTD. G24F 2 23300B001881' {
-  mode 1920x1080@165.000Hz
-  pos 0 0
-  bg /home/ali3nx/Pictures/Wallpapers/0029.jpg fill
+  mode 1920x1080@120.000Hz
+  adaptive_sync on
+  transform normal
+  pos 1080 295
+  bg /home/ali3nx/Pictures/Wallpapers/0036.jpg fill
 }
 
 output 'Microstep MSI G2422 0x00000508' {
-	mode 1920x1080@143.998Hz
-  bg /home/ali3nx/Pictures/Wallpapers/0029.jpg fill
-
+  mode 1920x1080@60.000Hz
+  transform 270
+  pos 0 0
+  bg /home/ali3nx/Pictures/Wallpapers/0035.jpg fill
 }
 
 #output HDMI-A-1 pos 1920 0
 #output HDMI-A-1 bg /home/ali3nx/Pictures/Wallpapers/wallhaven-odq7k5.jpg fill
 
-focus output 'DP-1'
+focus output 'GIGA-BYTE TECHNOLOGY CO., LTD. G24F 2 23300B001881'
+
+exec wlsunset -l 16.9896 -L 82.2407 -t 3800 -T 5500
+
 
 workspace 1 output DP-1
 workspace 2 output DP-1
@@ -229,6 +235,8 @@ bindsym XF86AudioMute exec pulsemixer --toggle-mute
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+bindsym $mod+Shift+a exec ~/.scripts/other/switch_audio.sh
 
 # screenshots
 set $ps1 Print
