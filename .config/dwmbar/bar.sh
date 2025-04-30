@@ -19,7 +19,7 @@ pkg_updates() {
   updates=$({ timeout 20 checkupdates 2>/dev/null || true; } | wc -l) # arch
 
 
-  if [ -z "$updates" ]; then
+  if [ -z "$updates" ] || [ "$updates" -eq 0 ]; then
     printf "  ^c$green^    Fully Updated"
   else
     printf "  ^c$green^    $updates"" updates"
@@ -33,7 +33,7 @@ mem() {
 }
 
 wlan() {
-	case "$(cat /sys/class/net/wifi0/operstate 2>/dev/null)" in
+	case "$(cat /sys/class/net/net0/operstate 2>/dev/null)" in
 	up) printf "^c$black^ ^b$blue^ 󰤨 ^d^%s" " ^c$blue^Connected" ;;
 	down) printf "^c$black^ ^b$blue^ 󰤭 ^d^%s" " ^c$blue^Disconnected" ;;
 	esac
