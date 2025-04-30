@@ -78,8 +78,11 @@ up () {
 
 # source aliases from ~/.aliasrc
 if [[ -r ~/.aliasrc ]]; then
-  . ~/.aliasrc
+  . $HOME/.aliasrc
 fi
+
+# Set up Node Version Manager(NVM)
+source /usr/share/nvm/init-nvm.sh
 
 if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
 then

@@ -9,12 +9,12 @@ if [ "$XDG_CURRENT_DESKTOP" != "KDE" ] ; then
     export _JAVA_AWT_WM_NONREPARENTING=1
 fi
 
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS_REQUIRE=prefer
+
 export ANDROID_HOME="$HOME/Android/Sdk"
 
 export PATH="${PATH}:$HOME/.local/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
-
-# Set up Node Version Manager(NVM)
-source /usr/share/nvm/init-nvm.sh
 
 # using `NVM` so commented it out
 #export npm_config_prefix="$HOME/.local"
