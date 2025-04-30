@@ -1,3 +1,5 @@
+842_compress
+842_decompress
 ac97_bus
 acpi_pad
 acpi_tad
@@ -18,6 +20,7 @@ btusb
 cbc
 ccm
 cdc_acm
+cdc_ether
 cec
 cfg80211
 cifs
@@ -45,6 +48,7 @@ ecdh_generic
 ee1004
 efivarfs
 encrypted_keys
+exfat
 ext4
 fat
 fuse
@@ -92,6 +96,8 @@ kvm_intel
 libarc4
 libcrc32c
 loop
+lz4_compress
+lz4hc_compress
 mac80211
 mac_hid
 mc
@@ -99,6 +105,7 @@ mei
 mei_hdcp
 mei_me
 mei_pxp
+mii
 mousedev
 mtd
 mxm_wmi
@@ -140,6 +147,7 @@ raid6_pq
 rapl
 rfcomm
 rfkill
+rndis_host
 serial_multi_instantiate
 sha1_ssse3
 sha256_ssse3
@@ -163,10 +171,12 @@ snd_seq_device
 snd_seq_dummy
 snd_soc_acpi
 snd_soc_acpi_intel_match
+snd_soc_acpi_intel_sdca_quirks
 snd_soc_avs
 snd_soc_core
 snd_soc_hdac_hda
 snd_soc_hda_codec
+snd_soc_sdca
 snd_sof
 snd_sof_intel_hda
 snd_sof_intel_hda_common
@@ -196,6 +206,7 @@ tun
 uas
 uinput
 usbhid
+usbnet
 usb_storage
 vfat
 video
