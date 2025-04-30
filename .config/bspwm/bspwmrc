@@ -1,9 +1,10 @@
 #!/bin/dash
 
-systemctl --user import-environment ANDROID_HOME PATH XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR XDG_SESSION_DESKTOP XDG_CURRENT_DESKTOP DESKTOP_SESSION GTK_MODULES MOTD_SHOWN XAUTHORITY SSH_AUTH_SOCK SHLVL GTK3_MODULES HADOOP_CONF_DIR HADOOP_LOG_DIR HADOOP_COMMON_LIB_NATIVE_DIR HADOOP_USERNAME QT_QPA_PLATFORMTHEME HG DEBUGINFOD_URLS npm_config_prefix _JAVA_AWT_WM_NONREPARENTING
+systemctl --user import-environment ANDROID_HOME PATH XDG_SEAT XDG_SEAT_PATH XDG_SESSION_CLASS XDG_SESSION_ID XDG_SESSION_PATH XDG_SESSION_TYPE XDG_VTNR DESKTOP_SESSION XDG_SESSION_DESKTOP XDG_CURRENT_DESKTOP GTK_MODULES MOTD_SHOWN XAUTHORITY SHLVL GTK3_MODULES QT_QPA_PLATFORMTHEME HG DEBUGINFOD_URLS _JAVA_AWT_WM_NONREPARENTING SSH_ASKPASS SSH_ASKPASS_REQUIRE NVM_BIN NVM_DIR NVM_CD NVM_INC PAM_KWALLET5_LOGIN
 
 # set the alignment of monitors
-xrandr --output DP-1 --primary --mode 1920x1080 --rate 144 --right-of HDMI-1 --output HDMI-1 --mode 1920x1080 --rate 144
+#xrandr --output DP-1 --primary --mode 1920x1080 --rate 144 --right-of HDMI-1 --output HDMI-1 --mode 1920x1080 --rate 144
+xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --rotate left --pos 0x0 --output DP-1 --primary --mode 1920x1080 --rate 120 --pos 1080x295 --rotate normal
 
 if xrandr | grep "HDMI-1 disconnected"; then
     bspc monitor DP-1 -d I II III IV V VI VII VIII IX X
@@ -32,7 +33,7 @@ bspc rule -a Pavucontrol state=floating center=on sticky=on
 bspc rule -a eww state=floating
 bspc rule -a ExifCleaner state=floating center=on sticky=on
 bspc rule -a 'Kvantum Manager' state=floating center=on
-bspc rule -a Firefox desktop=III follow=on focus=on
+bspc rule -a firefox desktop=III follow=on focus=on
 bspc rule -a Spotify state=tiled desktop=X
 bspc rule -a discord state=tiled desktop=IX
 bspc rule -a 'Tor Browser' desktop=VIII follow=on focus=on
@@ -45,7 +46,8 @@ bspc rule -a Szyszka state=floating center=on
 bspc rule -a mpv state=fullscreen follow=on focus=on
 bspc rule -a Lxappearance state=floating center=on
 bspc rule -a qt5ct state=floating center=on rectangle=800x500+100+100
-
+bspc rule -a wmname="Meeting" state=floating,above sticky=on
+bspc rule -a wmname="as_toolbar" state=floating
 ## autostart up applications
 
 # Unlocking KWallet
@@ -67,7 +69,7 @@ dunst &
 nm-applet --indicator &
 
 # feh set wallpaper
-feh --bg-scale ~/Pictures/Wallpapers/* &
+~/.fehbg &
 
 # lockscreen
 $HOME/.scripts/lock_and_power/lock.sh &
