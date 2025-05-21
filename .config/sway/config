@@ -272,6 +272,8 @@ exec_always {
     gsettings set $gnome-schema font-name 'DaddyTimeMono Nerd Font 10'
 }
 
+exec ~/.scripts/launch-scripts/open_kwallet.sh
+
 bindsym $mod+Shift+q exec "wlogout -p layer-shell"
 bindsym $mod+Prior exec firefox
 bindsym $mod+Next exec librewolf
