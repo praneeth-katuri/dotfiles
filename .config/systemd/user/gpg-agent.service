@@ -1,0 +1,10 @@
+[Unit]
+Description=User GPG Agent
+After=default.target
+
+[Service]
+ExecStart=/usr/bin/gpg-agent --supervised
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
