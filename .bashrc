@@ -81,6 +81,16 @@ if [[ -r ~/.aliasrc ]]; then
   . $HOME/.aliasrc
 fi
 
+# Set SSH_AUTH_SOCK only if not already set
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    export SSH_AUTH_SOCK="/run/user/$(id -u)/ssh-agent.socket"
+fi
+
+# Add SSH key only if not already added
+if ! ssh-add -l 2>/dev/null | grep -q id_ed25519; then
+    ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
+fi
+
 # Set up Node Version Manager(NVM)
 source /usr/share/nvm/init-nvm.sh
 
