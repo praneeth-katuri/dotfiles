@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check the current display server protocol
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    # Running under Wayland
+    # Enable Wayland support in Electron
+    DISCORD_ARGS="--enable-features=UseOzonePlatform --ozone-platform=wayland"
+else
+    # Default to X11
+    DISCORD_ARGS=""
+fi
+
+# Launch Discord with the appropriate arguments
+/usr/bin/discord $DISCORD_ARGS "$@"
