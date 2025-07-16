@@ -1,0 +1,29 @@
+# Borders
+default_border pixel 2
+titlebar_border_thickness 2
+
+# Gaps
+gaps top 2
+gaps bottom 2
+gaps left 2
+gaps right 2
+gaps inner 5
+
+# Colors
+client.focused          #A4B9EF #332E41 #E5B4E2 #DADAE8 #A4B9EF
+client.focused_inactive #A4B9EF #332E41 #E5B4E2 #DADAE8 #A4B9EF
+client.unfocused        #A4B9EF #1E1E28 #DADAE8 #DADAE8 #575268
+client.urgent           #A4B9EF #575268 #EBDDAA #DADAE8 #EBDDAA
+
+# Xcursor
+seat seat0 xcursor_theme Bibata-Modern-Amber 24
+
+# GTK settings
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+  gsettings set $gnome-schema gtk-theme 'Levuaska'
+  gsettings set $gnome-schema icon-theme 'candy-icons'
+  gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Amber'
+  gsettings set $gnome-schema font-name 'Noto Sans 11'
+}
+

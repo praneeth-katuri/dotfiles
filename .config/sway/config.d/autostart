@@ -1,0 +1,23 @@
+# Waybar (status bar)
+bar {
+    swaybar_command waybar
+}
+
+# wlsunset for night mode
+exec wlsunset -l 16.9896 -L 82.2407 -t 3800 -T 5500
+
+# Idle/Lock/Power management
+exec swayidle -w \
+	timeout 480 'way_lock' \
+	timeout 600 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"' \
+	timeout 1200 'systemctl suspend-then-hibernate' \
+	before-sleep 'way_lock'
+
+# Notification daemon
+exec /usr/bin/mako
+
+# polkit
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec wl-paste -t text --watch clipman store --no-persist

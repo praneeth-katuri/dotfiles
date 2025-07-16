@@ -1,0 +1,7 @@
+output DP-1 {
+  mode 1920x1080@120.000Hz
+  adaptive_sync on
+  transform normal
+  pos 1080 295
+  bg /home/ali3nx/Pictures/Wallpapers/0036.jpg fill
+}
