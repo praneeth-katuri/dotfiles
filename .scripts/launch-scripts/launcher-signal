@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# /* so much for being a secure messaging application when in reality in cant fucking work with wayland. */
+
+if [ "$XDG_SESSION_TYPE" = "waylan" ]; then signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland --use-tray-icon -- %u ; else signal-desktop --use-tray-icon -- %u ; fi
