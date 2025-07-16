@@ -1,0 +1,21 @@
+font=Mononoki Nerd Font
+layer=overlay
+markup=1
+anchor=top-right
+background-color=#1E1E28
+text-color=#DADAE8
+width=350
+height=300
+icon-path=/usr/share/icons/Papirus
+max-icon-size=64
+icon-location=left
+margin=5,5,0
+padding=10,10,10
+border-size=2
+border-color=#a4b9ef
+border-radius=12
+progress-color=over #332E41
+default-timeout=3000
+
+[mode=do-not-disturb]
+invisible=1
