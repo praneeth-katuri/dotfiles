@@ -1,0 +1,16 @@
+#!/bin/dash
+
+# Pause MPD (Music Player Daemon)
+mpc pause
+
+# Pause mpv or other MPRIS-compatible media players (including web browsers like Firefox or Chromium)
+playerctl --all-players pause
+
+# Mute system volume using pulsemixer
+pulsemixer --mute
+
+# Clear clipboard
+xclip -selection clipboard /dev/null
+
+# lock the screen
+betterlockscreen -l

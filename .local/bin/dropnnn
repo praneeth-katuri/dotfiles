@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+[ -f "$HOME/.config/nnn/env.sh" ] && source "$HOME/.config/nnn/env.sh"
+
+if ! pgrep -fx "kitty --class nnnterm --name nnnterm -e nnn" >/dev/null; then
+  kitty --class nnnterm --name nnnterm -e nnn &
+  sleep 0.4
+  swaymsg [app_id="nnnterm"] move scratchpad
+fi
+
+swaymsg [app_id="nnnterm"] scratchpad show

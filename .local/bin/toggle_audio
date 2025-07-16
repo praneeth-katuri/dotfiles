@@ -1,0 +1,20 @@
+#!/bin/bash
+
+HEADPHONES="alsa_output.usb-Generic_USB_Audio-00.HiFi__Headphones__sink"
+SPEAKERS="alsa_output.usb-Generic_USB_Audio-00.HiFi__Speaker__sink"
+
+ICON_HEADPHONES=audio-headphones
+ICON_SPEAKERS=audio-speakers
+
+CURRENT=$(pactl get-default-sink)
+
+# Toggle
+if [[ "$CURRENT" == "$HEADPHONES" ]]; then
+  pactl set-default-sink "$SPEAKERS"
+  notify-send -i "$ICON_SPEAKERS" "Audio Output Switched"
+elif [[ "$CURRENT" == "$SPEAKERS" ]]; then
+  pactl set-default-sink "$HEADPHONES"
+  notify-send -i "$ICON_HEADPHONES" "Audio Output Switched"
+else
+  notify-send -u critical "Audio Switch Error" "Unknown current sink: $CURRENT"
+fi

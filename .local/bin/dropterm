@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if ! pgrep -fx "kitty --class scratchterm --name scratchterm" >/dev/null; then
+  kitty --class scratchterm --name scratchterm &
+  sleep 0.5
+  swaymsg [app_id="scratchterm"] move scratchpad
+fi
+
+swaymsg [app_id="scratchterm"] scratchpad show
