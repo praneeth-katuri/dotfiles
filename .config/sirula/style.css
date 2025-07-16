@@ -1,0 +1,74 @@
+* {
+    background: transparent;
+}
+.background {
+    background-color: #457987;
+}
+
+.frame {
+    background-color: #052749;
+    border-radius: 20px;
+}
+
+.app-row {
+    transition: unset;
+    padding: 5px 0 5px 10px;
+    background-color: #457987;
+    background-clip: padding-box;
+    border: 5px solid #052749;
+    border-radius: 60px;
+    background-clip: padding-box;
+}
+
+.app-row:selected {
+    background-color: #459987;
+    outline: 0;
+}
+.app-row:hover {
+    background-color: #459987;
+    outline: 0;
+}
+.app-row:focus {
+    background-color: #459987;
+    outline: 0;
+}
+
+.app-label {
+    margin-left: 10px;
+    background-color: transparent;
+    font-family: Cantarell;
+    color: #052749;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.app-list {
+    background-color: #457987;
+    border-radius: 20px;
+ }
+
+scrollbar.vertical slider {
+    outline: 0;
+    border: 0;
+}
+
+#root-box {
+    border: 4px solid #052749;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.30), 0 0px 0px rgba(0,0,0,0.22);
+    margin: 0px;
+    background-color: #052749;
+    padding: 4px;
+}
+
+#search {
+    font-family: helvetica;
+    color: #052749;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 2px 8px;
+    margin: 5px;
+    background-color: #457987;
+    border-radius: 20px 20px 20px 20px;
+}
