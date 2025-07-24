@@ -13,13 +13,13 @@ super + shift + Next
       bitwarden-desktop
 
 super + Prior
-      firefox
+      gtk-launch firefox
 
 super + Next
-      librewolf
+      gtk-launch librewolf
 
 super + Delete
-       st -e ncmpcpp
+       kitty -e ncmpcpp
 
 super + bracketleft
        mpc seek -10 
@@ -32,14 +32,8 @@ super + shift + bracketright
 super + ctrl + p
        mpc toggle
 
-super + t
-      eww_center
-
 super + c
         ~/.config/rofi/launchers/type-2/launcher.sh
-
-super + n
-        eww_side
 
 # reload config (bspwmrc and sxhkdrc)  # 
 
@@ -172,7 +166,6 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-
 super + m
   bspc desktop -l next  # idk what this does 
 
@@ -185,9 +178,6 @@ Print
 
 super + {_,shift + }{a,b,c,d,e,0}
       bspc {desktop -f,node -d} '^{1-5,5}' --follow 
-
-super  + r
-      tdrop -ma -x '25%' -y '5%' -w '50%' -h '30%' -p 'bspc rule -a St -o state=floating' st -T ranger -e ranger
 
 # --------Screen Locking & Power Management ------- #
 
