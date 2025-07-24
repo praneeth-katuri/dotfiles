@@ -5,4 +5,4 @@ export NNN_PLUG='p:preview-tui;d:dragdrop;n:nmount;m:mtpmount'
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_COLORS="2136"
 export NNN_TRASH=1
-export NNN_OPTS='aeHxQDJ'
+export NNN_OPTS='aerHxQDJ'
