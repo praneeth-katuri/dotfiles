@@ -1,0 +1,7 @@
+export XDG_SESSION_DESKTOP=gnome
+export XDG_CURRENT_DESKTOP=GNOME
+
+# Export current shell environment to systemd + dbus
+if command -v dbus-update-activation-environment >/dev/null; then
+  dbus-update-activation-environment --systemd --all
+fi
