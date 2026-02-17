@@ -23,6 +23,7 @@ btusb
 cbc
 ccm
 cdc_acm
+cdc_ether
 cec
 cfg80211
 cls_u32
@@ -56,6 +57,7 @@ ghash_clmulni_intel
 gpu_sched
 hid_generic
 i2c_algo_bit
+i2c_dev
 i2c_i801
 i2c_mux
 i2c_smbus
@@ -94,6 +96,7 @@ mei
 mei_hdcp
 mei_me
 mei_pxp
+mii
 mousedev
 mtd
 mxm_wmi
@@ -126,6 +129,7 @@ raid6_pq
 rapl
 rfcomm
 rfkill
+rndis_host
 sch_htb
 serial_multi_instantiate
 sha1_ssse3
@@ -185,6 +189,7 @@ tun
 uas
 uinput
 usbhid
+usbnet
 usb_storage
 vfat
 vhost
